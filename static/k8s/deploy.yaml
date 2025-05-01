@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: restaurant
+  name: restaurant
+  namespace: adeola-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: restaurant
+    spec:
+      containers:
+      - image: IMAGE_NAME
+        name: restaurant
+        ports: 
+        - containerPort: 80
+        resources: {}
+status: {}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: restaurant-svc
+  namespace: adeola-ns
+spec:
+  selector:
+    app: restaurant
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 32420
+  type: NodePort
