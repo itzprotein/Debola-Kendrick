@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: restaurant-svc
+  name: hbd-svc
   namespace: adeola-ns
 spec:
   selector:
-    app: restaurant
+    app: hbd
   ports:
   - port: 80
     targetPort: 80

@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: restaurant
-  name: restaurant
+    app: hbd
+  name: hbd
   namespace: adeola-ns
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: restaurant
+      app: hbd
   strategy: {}
   template:
     metadata:
       labels:
-        app: restaurant
+        app: hbd
     spec:
       containers:
       - image: IMAGE_NAME
-        name: restaurant
+        name: hbd
         ports: 
         - containerPort: 80
         resources: {}
