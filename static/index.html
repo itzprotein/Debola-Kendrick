@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy 5th Birthday Folarinwa Ethan Fadahunsi!</title>
+    <title>Happy Birthday Folarinwa Ethan Fadahunsi!</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 class="birthday-title">Happy 5th Birthday <span>Folarinwa Ethan Fadahunsi!</span></h1>
+        <h1 class="birthday-title">Happy Birthday <span>Folarinwa Ethan Fadahunsi!</span></h1>
         
         <div class="photo-frame">
-            <img src="static/images/ethan.jpg" alt="Folarinwa Ethan Fadahunsi" class="birthday-photo">
+            <img src="ethan.jpg" alt="Folarinwa Ethan Fadahunsi" class="birthday-photo">
             <div class="photo-decoration"></div>
         </div>
         
         <div class="birthday-message">
             <p>Wishing you a day filled with joy, laughter, and all your favorite things!</p>
             <p>May this year bring you wonderful adventures and dreams come true!</p>
+        </div>
+        
+        <div class="spiderman-theme">
+            <p>Your friendly neighborhood Spiderman wishes you an amazing birthday!</p>
         </div>
         
         <div class="cake">
@@ -31,6 +35,15 @@
                 <div class="flame"></div>
             </div>
         </div>
+    </div>
+    
+    <!-- Spiderman Animation -->
+    <div class="spiderman">
+        <div class="spiderman-body"></div>
+        <div class="spiderman-head"></div>
+        <div class="spiderman-eye left"></div>
+        <div class="spiderman-eye right"></div>
+        <div class="web-line"></div>
     </div>
     
     <!-- Balloons -->
@@ -63,6 +76,33 @@
             setInterval(() => {
                 flame.style.transform = `scale(${Math.random() * 0.5 + 0.8})`;
             }, 300);
+            
+            // Spiderman swinging animation
+            const spiderman = document.querySelector('.spiderman');
+            let direction = 1;
+            let position = -100;
+            
+            function swingSpiderman() {
+                position += 2 * direction;
+                spiderman.style.left = position + 'px';
+                
+                // Change direction at screen edges
+                if (position > window.innerWidth + 100) {
+                    direction = -1;
+                    spiderman.style.transform = 'scaleX(-1)';
+                } else if (position < -100) {
+                    direction = 1;
+                    spiderman.style.transform = 'scaleX(1)';
+                }
+                
+                // Adjust web line angle
+                const angle = direction === 1 ? 20 : -20;
+                document.querySelector('.web-line').style.transform = `rotate(${angle}deg)`;
+                
+                requestAnimationFrame(swingSpiderman);
+            }
+            
+            swingSpiderman();
         });
     </script>
 </body>

@@ -1,313 +1,119 @@
+/* Previous styles remain the same until the end */
+
+/* Add these new styles for Spiderman elements */
+.spiderman-theme {
+    background-color: #d40b0b;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 2px solid #000;
+}
+
+.spiderman {
+    position: fixed;
+    width: 100px;
+    height: 150px;
+    top: 100px;
+    left: -100px;
+    z-index: 100;
+    animation: swing 1s infinite alternate;
+    transform-origin: top center;
+}
+
+.spiderman-body {
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    background-color: #d40b0b;
+    left: 20px;
+    top: 50px;
+    border-radius: 30px 30px 10px 10px;
+}
+
+.spiderman-head {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #d40b0b;
+    border-radius: 50%;
+    left: 25px;
+    top: 0;
+}
+
+.spiderman-eye {
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-color: white;
+    border-radius: 10px;
+    top: 15px;
+}
+
+.spiderman-eye.left {
+    left: 30px;
+    border: 2px solid #000;
+}
+
+.spiderman-eye.right {
+    right: 30px;
+    border: 2px solid #000;
+}
+
+.web-line {
+    position: absolute;
+    width: 2px;
+    height: 200px;
+    background-color: rgba(255,255,255,0.7);
+    top: -200px;
+    left: 50px;
+    transform-origin: bottom center;
+}
+
+@keyframes swing {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* Make the background more Spiderman-themed */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Baloo 2', cursive;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-    overflow-x: hidden;
-    min-height: 100vh;
-    position: relative;
+    background: linear-gradient(135deg, #d40b0b 0%, #000 100%);
     animation: bgChange 10s infinite alternate;
 }
 
 @keyframes bgChange {
-    0% { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
-    50% { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); }
-    100% { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+    0% { background: linear-gradient(135deg, #d40b0b 0%, #000 100%); }
+    50% { background: linear-gradient(135deg, #000 0%, #d40b0b 100%); }
+    100% { background: linear-gradient(135deg, #d40b0b 0%, #000 100%); }
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
+/* Update balloon colors to match Spiderman theme */
+.balloon1 { background: #d40b0b; } /* Red */
+.balloon2 { background: #000; } /* Black */
+.balloon3 { background: #d40b0b; } /* Red */
+.balloon4 { background: #000; } /* Black */
+.balloon5 { background: #d40b0b; } /* Red */
 
-.birthday-title {
-    font-size: 2.5rem;
-    color: #d40b0b;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px;
-    font-family: 'Pacifico', cursive;
-    animation: bounce 2s infinite;
-}
-
-.birthday-title span {
-    display: block;
-    font-size: 1.8rem;
-    color: #333;
-    margin-top: 10px;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.photo-frame {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto 30px;
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border: 8px solid #fff;
-    background: #fff;
-}
-
-.birthday-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-}
-
-.photo-decoration::before, .photo-decoration::after {
-    content: "";
-    position: absolute;
-    background: #ffcc00;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-.photo-decoration::before {
-    top: -25px;
-    left: -25px;
-}
-
-.photo-decoration::after {
-    bottom: -25px;
-    right: -25px;
-}
-
-.birthday-message {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 15px;
-    margin: 20px 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.birthday-message p {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #333;
-}
-
-/* Cake styles */
-.cake {
-    position: relative;
-    width: 200px;
-    height: 120px;
-    margin: 40px auto;
-}
-
-.plate {
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 240px;
-    height: 30px;
-    background: #e0e0e0;
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.layer {
-    position: absolute;
-    width: 100%;
-    border-radius: 10px;
-    left: 0;
-}
-
+/* Update cake colors */
 .layer-bottom {
-    height: 60px;
-    bottom: 0;
-    background: linear-gradient(to bottom, #f8c9d1, #e75480);
+    background: linear-gradient(to bottom, #d40b0b, #000);
 }
 
 .layer-middle {
-    height: 40px;
-    bottom: 60px;
-    background: linear-gradient(to bottom, #f5b5c5, #e75480);
-    width: 80%;
-    left: 10%;
+    background: linear-gradient(to bottom, #d40b0b, #000);
 }
 
 .layer-top {
-    height: 30px;
-    bottom: 100px;
-    background: linear-gradient(to bottom, #f0a1b7, #e75480);
-    width: 60%;
-    left: 20%;
+    background: linear-gradient(to bottom, #d40b0b, #000);
 }
 
 .icing {
-    position: absolute;
-    width: 100%;
-    height: 10px;
-    bottom: 110px;
-    background: #ffccf2;
-    border-radius: 5px;
-    z-index: 3;
+    background: #000;
 }
 
 .candle {
-    position: absolute;
-    width: 10px;
-    height: 30px;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4, #ff9a9e);
-    bottom: 130px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4;
-    border-radius: 3px;
-}
-
-.flame {
-    position: absolute;
-    width: 10px;
-    height: 20px;
-    background: #ffef00;
-    border-radius: 50% 50% 20% 20%;
-    top: -20px;
-    left: 0;
-    box-shadow: 0 0 10px #ff9900, 0 0 20px #ff6600;
-    animation: flicker 0.5s infinite alternate;
-}
-
-@keyframes flicker {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.1); opacity: 0.8; }
-}
-
-/* Balloons */
-.balloon {
-    position: absolute;
-    width: 60px;
-    height: 80px;
-    border-radius: 50%;
-    animation: float 8s infinite ease-in;
-    z-index: 0;
-}
-
-.balloon:before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 50px;
-    background: #333;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.balloon1 {
-    background: #ff5252;
-    left: 10%;
-    top: 30%;
-    animation-delay: 0s;
-}
-
-.balloon2 {
-    background: #4caf50;
-    left: 20%;
-    top: 50%;
-    animation-delay: 1s;
-}
-
-.balloon3 {
-    background: #2196f3;
-    left: 30%;
-    top: 20%;
-    animation-delay: 2s;
-}
-
-.balloon4 {
-    background: #ff9800;
-    right: 20%;
-    top: 40%;
-    animation-delay: 3s;
-}
-
-.balloon5 {
-    background: #9c27b0;
-    right: 10%;
-    top: 30%;
-    animation-delay: 4s;
-}
-
-@keyframes float {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-100px) rotate(5deg); }
-    100% { transform: translateY(0) rotate(0deg); }
-}
-
-/* Stars */
-.star {
-    position: absolute;
-    background: #fff;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    animation: twinkle 2s infinite alternate;
-}
-
-.star1 { width: 20px; height: 20px; top: 10%; left: 5%; }
-.star2 { width: 15px; height: 15px; top: 20%; right: 10%; animation-delay: 0.5s; }
-.star3 { width: 25px; height: 25px; top: 30%; left: 15%; animation-delay: 1s; }
-.star4 { width: 10px; height: 10px; top: 40%; right: 20%; animation-delay: 1.5s; }
-.star5 { width: 30px; height: 30px; bottom: 20%; left: 10%; animation-delay: 0.3s; }
-.star6 { width: 15px; height: 15px; bottom: 30%; right: 15%; animation-delay: 0.8s; }
-.star7 { width: 20px; height: 20px; bottom: 10%; left: 20%; animation-delay: 1.2s; }
-.star8 { width: 25px; height: 25px; bottom: 40%; right: 5%; animation-delay: 1.7s; }
-
-@keyframes twinkle {
-    0% { opacity: 0.3; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1.1); }
-}
-
-/* Confetti */
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #f00;
-    opacity: 0;
-    animation: confetti 5s linear infinite;
-}
-
-.confetti:nth-child(1) {
-    background: #f00;
-    left: 10%;
-    animation-delay: 0s;
-}
-.confetti:nth-child(2) {
-    background: #0f0;
-    left: 20%;
-    animation-delay: 1s;
-}
-.confetti:nth-child(3) {
-    background: #00f;
-    left: 30%;
-    animation-delay: 2s;
-}
-.confetti:nth-child(4) {
-    background: #ff0;
-    left: 40%;
-    animation-delay: 3s;
-}
-.confetti:nth-child(5) {
-    background: #f0f;
-    left: 50%;
-    animation-delay: 4s;
-}
-
-@keyframes confetti {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    background: linear-gradient(to right, #d40b0b, #000, #d40b0b);
 }
