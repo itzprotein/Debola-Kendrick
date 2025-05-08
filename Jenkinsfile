@@ -48,7 +48,7 @@ pipeline {
            steps {
             //    sh "docker run -d --name ${CONTAINER_NAME} -p 3436:5000 -e USER=adeola ${IMAGE_NAME}:v-0.0.${IMAGE_TAG}"
             script {
-                    kubeconfig(credentialsId: '2b8306e4-0b63-4b36-a84b-e6bf5b20e465', serverUrl: '') {
+                    kubeconfig(credentialsId: '0035eefa-1fb8-4a7c-83b3-68f7cfa9eff8', serverUrl: '') {
                         // some block
                         sh "sed -i 's|IMAGE_NAME|${IMAGE_NAME}:v-0.0.${IMAGE_TAG}|g' k8s/deploy.yaml"
                         // sh "sed -i 's|ENV_NAME|${ENV_NAME}|g' k8s/deploy.yaml"
